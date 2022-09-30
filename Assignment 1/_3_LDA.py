@@ -140,9 +140,9 @@ def LDA_perplexities(df, n_topics, passes=50, k=5, n_repeats=3,
     # df = df.copy().sample(frac=1).reset_index(drop=True)
 
     # Select only relevant columns and drop NaNs
-    df = df.loc[:, ['presentation', 'q_and_a']]
+    df = df.loc[:, ['presentation']]
     df = df.dropna()
-    docs = pd.concat((df.presentation, df.q_and_a)).reset_index(drop=True)
+    docs = pd.concat((df.presentation)).reset_index(drop=True)
 
     # Get all sentences as docs
     docs_new = []
@@ -199,9 +199,9 @@ def LDA(df, num_topics=None, passes=50):
     # passes = 25
 
     # Select only relevant columns and drop NaNs
-    df = df.loc[:, ['presentation', 'q_and_a']]
+    df = df.loc[:, ['presentation']]
     df = df.dropna()
-    docs = pd.concat((df.presentation, df.q_and_a)).reset_index(drop=True)
+    docs = pd.concat((df.presentation)).reset_index(drop=True)
 
     # Get all sentences as docs
     docs_new = []
